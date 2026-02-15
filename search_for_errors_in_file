@@ -1,0 +1,13 @@
+#script to trace /var/log/messages file
+# schedule the script through crontab to run every x minutes
+
+#!/bin/bash
+
+tail -fn0 /var/log/messages | while read line
+do
+echo $line | egrep -i "error|fail|offline|lost|shut|down|invalid|refused"
+        if [ $? = 0 ]
+        then
+        echo $line >> /tmp/filtered-messages
+        fi
+done
