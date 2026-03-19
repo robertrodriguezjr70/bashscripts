@@ -3,6 +3,21 @@
 # add this to crontab -e so that script runs every 60 seconds
 # * * * * * /root/CheckDockerContainer4.0.sh
 
+# Container must have a health check for this script to work
+# Example: 
+# whoami:
+#   image: traefik/whoami
+#   container_name: whoami_server
+#   restart: always
+#   ports:
+#     - "8081:80"
+# healthcheck:
+#     test: ["CMD", "wget", "-qO-", "http://localhost:80"]
+#     interval: 30s
+#     timeout: 10s
+#     retries: 3
+#     start_period: 15s
+
 set -euo pipefail
 
 FILE="dockerContainerStatus.txt"
