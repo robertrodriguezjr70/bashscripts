@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # add this to crontab -e so that script runs every 60 seconds
-# * * * * * /root/CheckDockerContainer4.0.sh
+# */10 * * * * /root/DockerContainerDownCheck.sh
 
 set -euo pipefail
 
