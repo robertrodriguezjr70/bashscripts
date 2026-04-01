@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# 04/01/2026 rrodriguez - This script will check docker info to see how many containers are running, and push the container count to a file named dockerContainerCount.txt
 # add this to crontab -e so that script runs every 60 seconds
 # */10 * * * * /root/DockerContainerDownCheck.sh
 
